@@ -131,14 +131,21 @@
 			<version>2.3.23</version>
 		</dependency>
 	</dependencies>
+	<!-- 下面进行maven项目的打包配置  -->
 	<build>
-        <finalName>FCERP</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
-		</plugins>
+		<finalName>ROOT</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.4</version>                    
+            <configuration>
+                <!--指定web.xml文件的位置-->
+                <webXml>src\webapp\WEB-INF\web.xml</webXml>
+                <!--指定jsp等文件所在位置-->   
+                <warSourceDirectory>src\webapp</warSourceDirectory>
+            </configuration>
+        </plugin>
+    </plugins>
 	</build>
 </project>
